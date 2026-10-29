@@ -1,0 +1,60 @@
+length,category,passwords
+3,Digits only,1
+3,Lowercase letters only,2
+4,Digits only,94
+4,Letters and digits,9
+4,Letters only (upper or mixed case),17
+4,Lowercase letters only,94
+5,Digits only,102
+5,Letters and digits,37
+5,Letters only (upper or mixed case),24
+5,Lowercase letters only,216
+6,Digits only,628
+6,Includes symbols,4
+6,Letters and digits,520
+6,Letters only (upper or mixed case),97
+6,Lowercase letters only,765
+7,Digits only,145
+7,Includes symbols,4
+7,Letters and digits,581
+7,Letters only (upper or mixed case),30
+7,Lowercase letters only,488
+8,Digits only,423
+8,Includes symbols,3
+8,Letters and digits,878
+8,Letters only (upper or mixed case),53
+8,Lowercase letters only,617
+9,Digits only,21
+9,Includes symbols,3
+9,Letters and digits,271
+9,Letters only (upper or mixed case),13
+9,Lowercase letters only,175
+10,Digits only,11
+10,Includes symbols,2
+10,Letters and digits,162
+10,Letters only (upper or mixed case),4
+10,Lowercase letters only,95
+11,Digits only,11
+11,Includes symbols,3
+11,Letters and digits,52
+11,Letters only (upper or mixed case),3
+11,Lowercase letters only,52
+12,Digits only,5
+12,Includes symbols,1
+12,Letters and digits,38
+12,Letters only (upper or mixed case),4
+12,Lowercase letters only,23
+13,Includes symbols,1
+13,Letters and digits,12
+13,Letters only (upper or mixed case),6
+13,Lowercase letters only,9
+14,Includes symbols,1
+14,Letters and digits,17
+14,Lowercase letters only,4
+15,Letters and digits,4
+15,Lowercase letters only,1
+16,Includes symbols,1
+16,Letters and digits,3
+16,Lowercase letters only,2
+17,Letters and digits,1
+20,Letters and digits,2
