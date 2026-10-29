@@ -1,0 +1,12 @@
+ # These are the configs I want, I wanted to practice my UI/UX skills.
+
+[theme]
+base = 'light'
+primaryColor = "#952fd0ff"            # buttons, links, focus rings (neon green)
+backgroundColor = "#ffffffff"        # page background (near-black)
+secondaryBackgroundColor = "#e2e2e2ff"  # form box, inputs (dark grey)
+textColor = "#4fae65ff"              # body text (green)
+font = "VT323:https://fonts.googleapis.com/css2?family=VT323&display=swap"
+headingFont = "VT323:https://fonts.googleapis.com/css2?family=VT323&display=swap"
+codeFont = "monospace"
+baseFontSize = 22
