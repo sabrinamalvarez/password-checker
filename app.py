@@ -8,7 +8,7 @@ import requests
 import streamlit as st
 
 
-st.set_page_config(page_title="Has Your Password Been Pwned?", layout="wide")
+st.set_page_config(page_title="How Strong is Your Weakest Link?", layout="wide")
 
 SUMMARY_PATH = Path(__file__).parent / "data" / "leaked_summary.csv"
 RANGE_URL = "https://api.pwnedpasswords.com/range/"
@@ -282,27 +282,27 @@ else:
         yaxis_title="Share of leaked passwords (%)",
         barmode="overlay", legend_title_text="",
     )
-    st.plotly_chart(fig1, width="stretch")
+    st.plotly_chart(fig1)
 
-    st.subheader("What are leaked passwords made of?")  # Helps users visualize how complexity (adding numbers and symbols) makes it harder for someone to use your password.
-    by_cat = summary.groupby("category")["passwords"].sum().reindex(CATEGORIES, fill_value=0) / total * 100
-    mine_cat = CATEGORIES.index(result["category"]) if result else None
-    cat_greys = ["#c3c8d1", "#aab1bd", "#8c93a0", "#6f7787", "#565e6e"]
-    fig2 = go.Figure(go.Pie(
-        labels=CATEGORIES,
-        values=by_cat.values,
-        sort=False,  # keep the categories in a fixed order
-        marker={"colors": [PURPLE if i == mine_cat else cat_greys[i] for i in range(len(CATEGORIES))],
-                "line": {"color": "white", "width": 2}},
-        pull=[0.1 if i == mine_cat else 0 for i in range(len(CATEGORIES))],
-        texttemplate="%{percent:.1%}",
-        textposition="outside",  # keeps small slices readable
-    ))
-    fig2.update_layout(
-        title="Character mix of leaked passwords" + (" (your password's group is orange)" if result else ""),
-        legend_title_text="Kind of characters used",
-    )
-    st.plotly_chart(fig2, width="stretch")
+st.subheader("What are leaked passwords made of?")  # Helps users visualize how complexity (adding numbers and symbols) makes it harder for someone to use your password.
+by_cat = summary.groupby("category")["passwords"].sum().reindex(CATEGORIES, fill_value=0) / total * 100
+mine_cat = CATEGORIES.index(result["category"]) if result else None
+cat_greys = ["#c3c8d1", "#aab1bd", "#8c93a0", "#6f7787", "#565e6e"]
+fig2 = go.Figure(go.Pie(
+    labels=CATEGORIES,
+    values=by_cat.values,
+    sort=False,  # keep the categories in a fixed order
+    marker={"colors": [PURPLE if i == mine_cat else cat_greys[i] for i in range(len(CATEGORIES))],
+            "line": {"color": "white", "width": 2}},
+    pull=[0.1 if i == mine_cat else 0 for i in range(len(CATEGORIES))],
+    texttemplate="%{percent:.1%}",
+    textposition="outside",  # keeps small slices readable
+))
+fig2.update_layout(
+    title="Character mix of leaked passwords" + (" (your password's group is purple)" if result else ""),
+    legend_title_text="Kind of characters used",
+)
+st.plotly_chart(fig2)
 
 # ---------- Insights ----------
 st.header("Insights")
