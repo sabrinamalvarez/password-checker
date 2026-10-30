@@ -28,7 +28,7 @@ The app uses one data source:
 
 1. **Pwned Passwords API (live lookup).** Breach counts come from the [Pwned Passwords](https://haveibeenpwned.com/Passwords) range API by Have I Been Pwned (`https://api.pwnedpasswords.com/range/`). An internet connection is required for the breach check.
 
-2. **Leaked-password sample (`data/leaked_summary.csv`).** The charts and insights are built from a trimmed sample of the previously mentioned public leaked-password dataset (Pwned Passwords)
+2. **Leaked-password sample (`data/leaked_summary.csv`).** The charts and insights are built from a trimmed sample of the previously mentioned public leaked-password dataset (Pwned Passwords).
 
    Each row is a count of passwords, so the CSV holds aggregate statistics rather than the passwords themselves. If the file is missing, the app still runs but shows a warning in place of the charts.
 
