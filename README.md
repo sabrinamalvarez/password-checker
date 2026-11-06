@@ -88,3 +88,10 @@ Open weakestlink.streamlit.app in any browser. No installation is needed. Then s
 4. **Compare with leaked passwords.** Scroll to *Visualizing Data Leaks*. Your password's length bar and character-mix slice are highlighted in purple.
 5. **Check another password.** The input box clears after each check; submit again to replace the result.
 
+## Using the Flask API
+
+This project includes a small Flask API that serves the summarized leaked-password data shown in the password checker. 
+
+Install the dependencies with `python -m pip install -r requirements.txt`, then start the server with `python flask_api.py`. The API runs locally on port 5050. 
+
+Visit `http://localhost:5050/hello` for a welcome message, or `http://localhost:5050/api/data` to get the summarized data as JSON, including a short description and a list of records, one per row of `leaked_summary.csv`.
